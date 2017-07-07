@@ -1,0 +1,86 @@
+/* Main style project */
+@import "bourbon"
+@import "vars"
+@import "libs"
+@import "media"
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden;
+	opacity: 1
+html
+	background: #fff
+.h1, .h2, .h3, .h4, .h5
+	line-height: 1.4
+	text-transform: uppercase
+.is-home
+	.site-header
+		min-height: 1500px
+		height: 100vh
+		background-color: #000
+		background-position: center center
+		.top-line
+			position: absolute
+			padding-top: 27px
+			width: 100%
+			z-index: 1
+.logo
+	img
+		width: 240px
+		height: auto
+		margin-left: 75px
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+.link-menu
+	top: 5px
+	position: relative
+	right: 148px
+	float: right
+	li
+		a
+			color: $blue
+.hiring-link, .portal-link, .contact-us
+	top: 44px
+	font-size: 18px
+	font-weight: 400
+	white-space: nowrap //!!!!!!!!for small screen
+	margin-right: 5px
+	display: inline-block
+	padding: 11px 24px 7px 24px
+	text-transform: uppercase
+.contact-us
+	border: 2px solid $blue
+	border-radius: 37px
+	height: 43px
+.portal-link
+.hiring-link
+.hamburger
+	position: absolute
+	right: 0
+	top: 28px
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+    height: 4px
+    background-color: $blue
+    position: absolute
+    bottom: 10px
+    border-radius: none
+    width: 40px
+    margin-bottom: 2px
+#my-menu
+	display: none
+	right: 0px
+	position: absolute
+.cloud
+    min-height: 700px
+    margin-top: -170px
+.eath
+	min-height
+    
