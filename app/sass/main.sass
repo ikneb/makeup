@@ -15,15 +15,13 @@ body
 	opacity: 1
 html
 	background: #fff
-.h1, .h2, .h3, .h4, .h5
-	line-height: 1.4
-	text-transform: uppercase
 .is-home
 	.site-header
-		min-height: 1500px
+		min-height: 1300px
 		height: 100vh
 		background-color: #000
 		background-position: center center
+		z-index: 0
 		.top-line
 			position: absolute
 			padding-top: 27px
@@ -48,9 +46,9 @@ section, header
 		a
 			color: $blue
 .hiring-link, .portal-link, .contact-us
+	font-family: Segoeui
 	top: 44px
 	font-size: 18px
-	font-weight: 400
 	white-space: nowrap //!!!!!!!!for small screen
 	margin-right: 5px
 	display: inline-block
@@ -60,8 +58,7 @@ section, header
 	border: 2px solid $blue
 	border-radius: 37px
 	height: 43px
-.portal-link
-.hiring-link
+
 .hamburger
 	position: absolute
 	right: 0
@@ -71,16 +68,80 @@ section, header
     background-color: $blue
     position: absolute
     bottom: 10px
-    border-radius: none
+    border-radius: 1px
+    -webkit-border-radius: 1px
     width: 40px
     margin-bottom: 2px
 #my-menu
 	display: none
 	right: 0px
 	position: absolute
+.header-flex, .slider-flex
+	display:flex
+	height: 100%
+	top: 195px
+	position: relative
+.flex-cloud
+	display:flex
+	height: 100%
+	top: 320px
+	position: relative
+
+.composition
+	font-family: Display-Light
+	color: #fff
+    position: relative
+	line-height: 1.50
+.composition-cloud
+	font-family: Display-Light
+	color: #000
+    position: relative
+	line-height: 1.25
+	font-size: 18px
+	h1
+		color: #74819e
 .cloud
-    min-height: 700px
-    margin-top: -170px
-.eath
-	min-height
+    min-height: 1250px
+    margin-top: -190px
+    margin-bottom: -190px
+    z-index: 2
+.we-specilise
+	color: #000
+	bottom: 400px
+	margin-top: 700px
+	text-align: center
+.earth
+	position: relative
+	min-height: 613px
+	bottom: 0
+	background-position: 50% !important
+	margin-top: -300px
+	margin-right: -66px
+	z-index: 1
+	margin-left: -66px
+.aus-flex .composition, .isr-flex .composition, .brz-flex .composition, .usa-flex .composition, .houston-flex .composition
+	width: 100px
+	height: 100px
+	border-radius: 100%
+	color: #000
+	text-align: center
+	div
+		width: 60px
+		height: 60px
+		background-color: #fff
+		border-radius: 100%
+		position: inherit
+		margin: 19px auto;
+		padding-top: 32px;
+.houston-flex
+	left: 0
+	
+.slider
+	min-height: 700px
+.how-we-work
+	font-size: 3em
+#my-footer
+	min-height: 440px
+	background-color: #545555
+
     
