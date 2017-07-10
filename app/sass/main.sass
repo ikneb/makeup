@@ -32,11 +32,12 @@ html
 		width: 240px
 		height: auto
 		margin-left: 75px
-
 section, header
 	position: relative
 	background-size: cover
 	background-position: center
+.top-composition
+
 .link-menu
 	top: 5px
 	position: relative
@@ -45,6 +46,105 @@ section, header
 	li
 		a
 			color: $blue
+.in-left-menu
+	-webkit-animation: menu-animation 0.5s linear forwards
+    animation: menu-animation 0.5s linear forwards
+@-webkit-keyframes menu-animation 
+    0% 
+    	right: 150px
+    10% 
+    	right: 163px
+    20% 
+    	right: 176px
+    30% 
+    	right: 190px
+    40% 
+    	right: 203px
+    50% 
+    	right: 216px
+    60% 
+    	right: 230px
+    70% 
+    	right: 243px
+    80% 
+    	right: 260px
+    90% 
+    	right: 275px
+    100% 
+    	right: 280px
+@keyframes menu-animation
+    0% 
+    	right: 150px
+    10% 
+    	right: 163px
+    20% 
+    	right: 176px
+    30% 
+    	right: 190px
+    40% 
+    	right: 203px
+    50% 
+    	right: 216px
+    60% 
+    	right: 230px
+    70% 
+    	right: 243px
+    80% 
+    	right: 260px
+    90% 
+    	right: 275px
+    100% 
+    	right: 280px
+.in-right-menu
+	-webkit-animation: menu-right-animation 0.5s linear forwards
+    animation: menu-right-animation 0.5s linear forwards
+@-webkit-keyframes menu-right-animation
+    0% 
+    	right: 280px
+    10% 
+    	right: 275px
+    20% 
+    	right: 260px
+    30% 
+    	right: 243px
+    40% 
+    	right: 230px
+    50% 
+    	right: 216px
+    60% 
+    	right: 203px
+    70% 
+    	right: 190px
+    80% 
+    	right: 176px
+    90% 
+    	right: 163px
+    100% 
+    	right: 150px
+@keyframes menu-right-animation
+    0% 
+    	right: 280px
+    10% 
+    	right: 275px
+    20% 
+    	right: 260px
+    30% 
+    	right: 243px
+    40% 
+    	right: 230px
+    50% 
+    	right: 216px
+    60% 
+    	right: 203px
+    70% 
+    	right: 190px
+    80% 
+    	right: 176px
+    90% 
+    	right: 163px
+    100% 
+    	right: 150px
+    	
 .hiring-link, .portal-link, .contact-us
 	font-family: Segoeui
 	top: 44px
@@ -52,7 +152,7 @@ section, header
 	white-space: nowrap //!!!!!!!!for small screen
 	margin-right: 5px
 	display: inline-block
-	padding: 11px 24px 7px 24px
+	padding: 10px 24px 7px 24px
 	text-transform: uppercase
 .contact-us
 	border: 2px solid $blue
@@ -72,10 +172,222 @@ section, header
     -webkit-border-radius: 1px
     width: 40px
     margin-bottom: 2px
+.in-left
+	-webkit-animation: left-animation 0.5s linear forwards
+    animation: left-animation 0.5s linear forwards
+@-webkit-keyframes left-animation 
+    0% 
+    	right:  0
+    10% 
+    	right: 14px
+    20% 
+    	right: 26px
+    30% 
+    	right: 40px
+    40% 
+    	right: 53px
+    50% 
+    	right: 66px
+    60% 
+    	right: 80px
+    70% 
+    	right: 94px
+    80% 
+    	right: 106px
+    80% 
+    	right: 120px
+    100% 
+    	right: 135px
+@keyframes left-animation 
+    0% 
+    	right:  0
+    10% 
+    	right: 14px
+    20% 
+    	right: 26px
+    30% 
+    	right: 40px
+    40% 
+    	right: 53px
+    50% 
+    	right: 66px
+    60% 
+    	right: 80px
+    70% 
+    	right: 33px
+    80% 
+    	right: 106px
+    80% 
+    	right: 120px
+    100% 
+    	right: 135px
+.in-right
+	-webkit-animation: right-animation 0.5s linear forwards
+    animation: right-animation 0.5s linear forwards
+@-webkit-keyframes right-animation
+    0% 
+    	right: 135px
+    10% 
+    	right: 122px
+    20% 
+    	right: 107px
+    30% 
+    	right: 93px
+    40% 
+    	right: 80px
+    50% 
+    	right: 66px
+    60% 
+    	right: 53px
+    70% 
+    	right: 33px
+    80% 
+    	right: 26px
+    80% 
+    	right: 14px
+    100% 
+    	right:  0
+    
+@keyframes right-animation
+    0% 
+    	right: 135px
+    10% 
+    	right: 122px
+    20% 
+    	right: 107px
+    30% 
+    	right: 93px
+    40% 
+    	right: 80px
+    50% 
+    	right: 66px
+    60% 
+    	right: 53px
+    70% 
+    	right: 33px
+    80% 
+    	right: 26px
+    80% 
+    	right: 14px
+    100% 
+    	right:  0
+.render-menu
+	display: block !important
 #my-menu
-	display: none
-	right: 0px
+	right: -201px;
 	position: absolute
+	top: 34px
+	ul
+		line-height: 50px;
+		padding-top: 0
+		li
+			background-color: #fff
+			width: 200px
+			height: 50px
+			text-align: center
+			vertical-align: middle;
+			cursor: pointer
+		.active 
+			width: 100%
+			background-color: $blue 
+.show-menu
+	-webkit-animation: show-menu 0.5s linear forwards
+    animation: show-menu 0.5s linear forwards
+@-webkit-keyframes show-menu 
+    0% 
+    	right:  -200px
+    10% 
+    	right: -180px
+    20% 
+    	right: -160px
+    30% 
+    	right: -140px
+    40% 
+    	right: -120px
+    50% 
+    	right: -100px
+    60% 
+    	right: -80px
+    70% 
+    	right: -60px
+    80% 
+    	right: -40px
+    80% 
+    	right: -20px
+    100% 
+    	right: 0px
+@keyframes show-menu  
+    0% 
+    	right:  -200px
+    10% 
+    	right: -180px
+    20% 
+    	right: -160px
+    30% 
+    	right: -140px
+    40% 
+    	right: -120px
+    50% 
+    	right: -100px
+    60% 
+    	right: -80px
+    70% 
+    	right: -60px
+    80% 
+    	right: -40px
+    80% 
+    	right: -20px
+    100% 
+    	right: 0px
+.close-menu
+	-webkit-animation: close-menu 0.5s linear forwards
+    animation: close-menu 0.5s linear forwards
+@-webkit-keyframes close-menu 
+    0% 
+    	right:  0px
+    10% 
+    	right: -20px
+    20% 
+    	right: -40px
+    30% 
+    	right: -60px
+    40% 
+    	right: -80px
+    50% 
+    	right: -100px
+    60% 
+    	right: -120px
+    70% 
+    	right: -140px
+    80% 
+    	right: -160px
+    80% 
+    	right: -180px
+    100% 
+    	right: -200px
+@keyframes close-menu 
+    0% 
+    	right:  0px
+    10% 
+    	right: -20px
+    20% 
+    	right: -40px
+    30% 
+    	right: -60px
+    40% 
+    	right: -80px
+    50% 
+    	right: -100px
+    60% 
+    	right: -120px
+    70% 
+    	right: -140px
+    80% 
+    	right: -160px
+    80% 
+    	right: -180px
+    100% 
+    	right: -200px
 .header-flex, .slider-flex
 	display:flex
 	height: 100%
@@ -113,19 +425,17 @@ section, header
 	text-align: center
 .earth
 	position: relative
-	min-height: 613px
+	min-height: 700px
 	bottom: 0
 	background-position: 50% !important
 	margin-top: -300px
-	margin-right: -66px
 	z-index: 1
-	margin-left: -66px
 .aus-flex .composition, .isr-flex .composition, .brz-flex .composition, .usa-flex .composition, .houston-flex .composition
 	width: 110px
 	height: 110px
 	border-radius: 100%
 	text-align: center
-	background: rgba(159, 198, 215, 0.9)
+	background: rgba(159, 198, 215, 0.7)
 	padding: 3px
 	div
 		width: 65px
@@ -140,22 +450,22 @@ section, header
 		font-size: 11px
 		opacity: 1
 .houston-flex .composition
-	left: 587px
-	top: 130px
+	left: 598px
+	top: 165px
 	div
 		font-size: 10px
 .usa-flex .composition
-	left: 99px
-	top: 50px
+	left: 43px
+	top: 80px
 .isr-flex .composition
-	left: 607px
-	bottom: 78px
+	left: 620-3px
+	bottom: 38px
 .brz-flex .composition
-	left: 269px
-	top: 110px
+	left: 229px
+	top: 160px
 .aus-flex .composition
-	left: 945px
-	bottom: 83px
+	left: 999px
+	bottom: 30px
 .houston-flex
 	left: 0
 	
