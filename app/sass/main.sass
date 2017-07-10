@@ -277,6 +277,7 @@ section, header
 	right: -201px;
 	position: absolute
 	top: 34px
+	z-index: 2
 	ul
 		line-height: 50px;
 		padding-top: 0
@@ -290,6 +291,8 @@ section, header
 		.active 
 			width: 100%
 			background-color: $blue 
+			a
+				color: #fff
 .show-menu
 	-webkit-animation: show-menu 0.5s linear forwards
     animation: show-menu 0.5s linear forwards
@@ -421,8 +424,10 @@ section, header
 .we-specilise
 	color: #000
 	bottom: 400px
-	margin-top: 700px
+	margin-top: 400px
 	text-align: center
+	img
+		width: 140px
 .earth
 	position: relative
 	min-height: 700px
@@ -444,11 +449,16 @@ section, header
 		border-radius: 100%
 		position: inherit
 		margin: 19px auto;
-		padding-top: 32px;
+		padding-top: 9px;
 		color: #000
 		font-family: Segoeui
 		font-size: 11px
 		opacity: 1
+		line-height: 0
+		img
+			width: 32px
+		p
+			margin-top: 5px
 .houston-flex .composition
 	left: 598px
 	top: 165px
@@ -458,7 +468,7 @@ section, header
 	left: 43px
 	top: 80px
 .isr-flex .composition
-	left: 620-3px
+	left: 620px
 	bottom: 38px
 .brz-flex .composition
 	left: 229px
@@ -490,11 +500,44 @@ section, header
 		margin-right: 8%
 		margin-bottom: none
 .footer__pages
-	border-bottom: 2px solid $blue
-	font-family: Display-Light 
-.footer__contact, .footer__social
+	font-family: Display-Light
+	div
+		margin-left: 0
+		padding: 0
+		li
+			color: $blue
+			font-size: 18px
+			padding: 2px 0
+	.footer__pages-title
+		border-bottom: 2px solid $blue
+		font-family: Display-Light
+		font-size: 21px
+		padding-bottom: 20px
+		margin-top: 0px 
+		margin-bottom: 40px		
+.footer__contact-title, .footer__social-title
 	border-bottom: 2px solid #a9e8f9
 	font-family: Display-Light 
+	font-size: 18px
+	padding-bottom: 20px
+	margin-top: 0px 
+	font-family: Display-Light
+	font-size: 21px
+	margin-bottom: 40px
+.footer__contact, .footer__social
+	div
+		border: 1.5px solid #979898
+		width: 40px
+		height: 40px
+		text-align: center
+		margin-left: 0
+		margin-right: 10px
+		border-radius: 5px
+		display: inline-block
+		padding: 6px
+		img
+			width: 25px
+
 .smutch
 	background-image: linear-gradient(to right, #4c4c4c 50%, rgba(255,255,255,0) 0%);
 	background-size: 90px 15px;

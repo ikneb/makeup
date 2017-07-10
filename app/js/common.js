@@ -17,4 +17,11 @@ $(document).ready(function () {
 				click = true;
 			}
 		}); 
+
+		$('#my-menu>ul>li').click(function () {
+			console.log(12312);
+			var _this = $(this);
+			$('.active').removeClass('active');
+			_this.addClass('active');
+		});
 });
