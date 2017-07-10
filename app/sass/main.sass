@@ -288,6 +288,10 @@ section, header
 			text-align: center
 			vertical-align: middle;
 			cursor: pointer
+			a
+				color: $blue 
+			a:hover
+				color: #1ca4bf
 		.active 
 			width: 100%
 			background-color: $blue 
@@ -524,9 +528,8 @@ section, header
 	font-family: Display-Light
 	font-size: 21px
 	margin-bottom: 40px
-.footer__contact, .footer__social
+.footer__contact, 
 	div
-		border: 1.5px solid #979898
 		width: 40px
 		height: 40px
 		text-align: center
@@ -536,7 +539,20 @@ section, header
 		display: inline-block
 		padding: 6px
 		img
-			width: 25px
+			width: 40px
+.footer__social
+    div
+        border: 1.5px solid #979898
+        width: 40px
+        height: 40px
+        text-align: center
+        margin-left: 0
+        margin-right: 10px
+        border-radius: 5px
+        display: inline-block
+        padding: 6px
+        img
+            width: 25px
 
 .smutch
 	background-image: linear-gradient(to right, #4c4c4c 50%, rgba(255,255,255,0) 0%);

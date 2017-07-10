@@ -59,6 +59,7 @@ gulp.task('libs', function() {
 		'app/libs/equalHeight/jquery.equalheights.min.js',
 		'app/libs/jqueryformstyler/jquery.formstyler.min.js',
 		'app/libs/jQuery.mmenu/dist/wrappers/jquery.mmenu.all.js',
+		'app/libs/fullPage.js-master/jquery.fullPage.min.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
