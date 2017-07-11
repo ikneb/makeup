@@ -47,7 +47,7 @@ section, header
 		a
 			color: $blue
 .in-left-menu
-	-webkit-animation: menu-animation 0.5s linear forwards
+    -webkit-animation: menu-animation 0.5s linear forwards
     animation: menu-animation 0.5s linear forwards
 @-webkit-keyframes menu-animation 
     0% 
@@ -98,6 +98,7 @@ section, header
 .in-right-menu
 	-webkit-animation: menu-right-animation 0.5s linear forwards
     animation: menu-right-animation 0.5s linear forwards
+    display: none
 @-webkit-keyframes menu-right-animation
     0% 
     	right: 280px
@@ -274,31 +275,34 @@ section, header
 .render-menu
 	display: block !important
 #my-menu
-	right: -201px;
-	position: absolute
-	top: 34px
-	z-index: 2
-	ul
-		line-height: 50px;
-		padding-top: 0
-		li
-			background-color: #fff
-			width: 200px
-			height: 50px
-			text-align: center
-			vertical-align: middle;
-			cursor: pointer
-			a
-				color: $blue 
-			a:hover
-				color: #1ca4bf
-		.active 
-			width: 100%
-			background-color: $blue 
-			a
-				color: #fff
+    ul
+        line-height: 50px
+        padding-top: 0
+        li
+            background-color: #fff
+            width: 200px
+            height: 50px
+            text-align: center
+            vertical-align: middle;
+            cursor: pointer
+            a
+                color: $blue
+            a:hover
+                color: #1ca4bf
+        .active
+            width: 100%
+            background-color: $blue
+            a
+                color: #fff
+#my-menu
+    right: -201px;
+    position: absolute
+    top: 34px
+    z-index: 2
+    display: none
 .show-menu
-	-webkit-animation: show-menu 0.5s linear forwards
+    display: block !important
+    -webkit-animation: show-menu 0.5s linear forwards
     animation: show-menu 0.5s linear forwards
 @-webkit-keyframes show-menu 
     0% 
@@ -431,6 +435,8 @@ section, header
 	text-align: center
 	img
 		width: 140px
+.we-specilise, .flex-cloud
+    opacity: 0
 .earth
 	position: relative
 	min-height: 700px
@@ -438,7 +444,6 @@ section, header
 	background-position: 50% !important
 	margin-top: -300px
 	z-index: 1
-    width: 100%
 .aus-flex .composition, .isr-flex .composition, .brz-flex .composition, .usa-flex .composition, .houston-flex .composition
 	width: 8%
 	border-radius: 100%
@@ -466,7 +471,7 @@ canvas
     position: absolute
 #bezier-aus 
     left: 57%
-    top: 25%
+    top: 26%
     width: 23%
     height: 41%
 #bezier-usa
@@ -477,7 +482,7 @@ canvas
     height: 41%
 .earth .composition
     position: absolute
-     // opacity: 0
+    opacity: 0
 .show-composition
     opacity: 1 !important
 .houston-flex .composition
@@ -575,5 +580,24 @@ canvas
 	background-size: 90px 15px;
 	background-repeat: repeat-x;
 	height: 15px	
-
-
+#flex-cloud, #we-specilise
+    -webkit-animation: cloud 0.5s linear forwards
+    animation: cloud 0.5s linear forwards
+@keyframes cloud
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@webkit-keyframes cloud
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1

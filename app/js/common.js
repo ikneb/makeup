@@ -2,6 +2,8 @@ var anchors = [];
 var currentAnchor = -1;
 var isAnimating  = false;
 var click = false;
+var render = false;
+
 
 
 
@@ -169,21 +171,19 @@ function drawPoints(ctx, arr, delay, pause) {
     }
 }
 
-
+console.log(document.documentElement.clientWidth);
 
 $(function(){
-    
     function updateAnchors() {
         anchors = [];
         $('.anchor').each(function(i, element){
             anchors.push( $(element).offset().top );
         });
-        
     }
-    
     $('body').on('mousewheel', function(e){
        	e.preventDefault();
         e.stopPropagation();
+        
 
         if( isAnimating ) {
             return false;
@@ -200,11 +200,10 @@ $(function(){
             currentAnchor = 0;
         }
         isAnimating  = true;
-
+        
         if (anchors[currentAnchor] < 800) {
         	
-
-        } else if( anchors[currentAnchor] < 1000) {
+        } else if( anchors[currentAnchor] < 1200 && render == true) {
         	setTimeout(function () {
         		$('.houston-flex .composition').addClass('show-composition');
         		drawC = document.getElementById('bezier-aus');
@@ -250,18 +249,17 @@ $(function(){
 				    arr[3] = new Array(100, 50);
 				    arr[4] = new Array(50, 40);
 				   
-
 				    //bzr
 				    arr[5] = new Array(300, 28);
                     arr[6] = new Array(310, 60);
                     arr[7] = new Array(20, 200);
-
 
 				    flow = getBezierCurve(new Array(arr[0],  arr[1], arr[2], arr[3], arr[4]), 0.05);
 				    drawLines(ctx, flow, 10);
 
 				    flow = getBezierCurve(new Array(arr[5], arr[6],  arr[7] ), 0.05);
 				    drawLines(ctx, flow, 10);
+                    return;
 				}
         	}, 800);
         	setTimeout(function () {
@@ -272,12 +270,19 @@ $(function(){
         	}, 1200);
         	setTimeout(function () {
         		$('.aus-flex .composition').addClass('show-composition');
-        	}, 2400);
-        	/*setTimeout(function () {
+        	}, 1400);
+        	setTimeout(function () {
         		$('.usa-flex .composition').addClass('show-composition');
-        	}, 1600);*/
-        }
-
+        	}, 1600);
+            } else if (anchors[currentAnchor] >1400) {
+                setTimeout(function () {
+               $(".flex-cloud").attr('id','flex-cloud');
+                $(".we-specilise").attr('id','we-specilise');
+            }, 1000);
+           
+            }
+            render = true;
+        
         $('html, body').animate({
             scrollTop: parseInt( anchors[currentAnchor] )
         }, 500, 'swing', function(){
@@ -310,7 +315,6 @@ $(document).ready(function () {
 		}); 
 
 		$('#my-menu>ul>li').click(function () {
-			console.log(12312);
 			var _this = $(this);
 			$('.active').removeClass('active');
 			_this.addClass('active');
@@ -318,7 +322,6 @@ $(document).ready(function () {
 
 		$('.height-composition').each(function(i, element){
             	var composition = $(this)[0];
-            	console.log(composition);
 				composition.style.height = composition.clientWidth + 'px';
 				window.onresize = function() {
     			composition.style.height = composition.clientWidth + 'px';
