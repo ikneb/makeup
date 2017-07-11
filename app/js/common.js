@@ -182,7 +182,7 @@ $(function(){
     }
     
     $('body').on('mousewheel', function(e){
-        e.preventDefault();
+       	e.preventDefault();
         e.stopPropagation();
 
         if( isAnimating ) {
@@ -202,7 +202,7 @@ $(function(){
         isAnimating  = true;
 
         if (anchors[currentAnchor] < 800) {
-        	console.log(1);
+        	
 
         } else if( anchors[currentAnchor] < 1000) {
         	setTimeout(function () {
@@ -210,32 +210,66 @@ $(function(){
         		drawC = document.getElementById('bezier-aus');
         		if (drawC && drawC.getContext) {
 				    ctx = drawC.getContext('2d');
-				    ctx.fillStyle="#33CC99";
-				    ctx.lineWidth=0.5;
+				    ctx.lineWidth= 0.03;
 				    
 				    var flow; 
 				    var arr = new Array();
-				    // 1
-				    arr[0] = new Array(0, 30);
-				    arr[1] = new Array(100, 5);
+				    // aus
+				    arr[0] = new Array(0, 5);
+				    arr[1] = new Array(100, 0);
 				    arr[2] = new Array(200 , 0);
 				    arr[3] = new Array(300, 50);
 				    arr[4] = new Array(500, 400);
 				    arr[5] = new Array(700, 600);
-				    arr[5] = new Array(750, 800);
+				    arr[6] = new Array(750, 800);
+				   
 
-				  
-				    flow = getBezierCurve(new Array(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]), 0.03); // Из кривой 1 вырастают 2, 3. Кривые 1, 2 рисуем одной линией
-				    // flow = flow.concat(getBezierCurve(new Array(arr[3], arr[4], arr[5], arr[6], arr[7], arr[8], arr[9]), 0.02));
+				    //isr
+				    arr[7] = new Array(10, 10);
+				    arr[8] = new Array(50, 50);
+				    arr[9] = new Array(0, 80);
+
+
+				    flow = getBezierCurve(new Array(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]), 0.05);
+				    drawLines(ctx, flow, 10);
+
+				    flow = getBezierCurve(new Array(arr[7], arr[8], arr[9]), 0.05);
+				    drawLines(ctx, flow, 10);
+				}
+				    drawU = document.getElementById('bezier-usa');
+        		if (drawU && drawU.getContext) {
+				    ctx = drawU.getContext('2d');
+				    ctx.lineWidth= 0.03;
+				    
+				    var flow; 
+				    var arr = new Array();
+				    // usa
+				    arr[0] = new Array(300, 10);
+				    arr[1] = new Array(300, 50);
+				    arr[2] = new Array(200 , 50);
+				    arr[3] = new Array(100, 50);
+				    arr[4] = new Array(50, 40);
+				   
+
+				    //bzr
+				    arr[5] = new Array(300, 28);
+                    arr[6] = new Array(310, 60);
+                    arr[7] = new Array(20, 200);
+
+
+				    flow = getBezierCurve(new Array(arr[0],  arr[1], arr[2], arr[3], arr[4]), 0.05);
+				    drawLines(ctx, flow, 10);
+
+				    flow = getBezierCurve(new Array(arr[5], arr[6],  arr[7] ), 0.05);
 				    drawLines(ctx, flow, 10);
 				}
         	}, 800);
-        	/*setTimeout(function () {
+        	setTimeout(function () {
         		$('.isr-flex .composition').addClass('show-composition');
         	}, 1000);
         	setTimeout(function () {
         		$('.brz-flex .composition').addClass('show-composition');
-        	}, 1200);*/
+        	}, 1200);
         	setTimeout(function () {
         		$('.aus-flex .composition').addClass('show-composition');
         	}, 2400);
@@ -251,7 +285,7 @@ $(function(){
         });
     });
 
-    updateAnchors();   
+    updateAnchors(); 
     
 });
 
@@ -281,6 +315,15 @@ $(document).ready(function () {
 			$('.active').removeClass('active');
 			_this.addClass('active');
 		});
+
+		$('.height-composition').each(function(i, element){
+            	var composition = $(this)[0];
+            	console.log(composition);
+				composition.style.height = composition.clientWidth + 'px';
+				window.onresize = function() {
+    			composition.style.height = composition.clientWidth + 'px';
+			}
+        });
 
 });
 
