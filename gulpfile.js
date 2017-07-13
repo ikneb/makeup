@@ -52,14 +52,7 @@ gulp.task('headersass', function() {
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/jquery.min.js',
-		'app/libs/slick/slick.min.js',
-		'app/libs/maskedinput/maskedinput.min.js',
-		'app/libs/validate/jquery.validate.min.js',
-		'app/libs/magnific-popup/jquery.magnific-popup.min.js',
-		'app/libs/equalHeight/jquery.equalheights.min.js',
-		'app/libs/jqueryformstyler/jquery.formstyler.min.js',
-		'app/libs/jQuery.mmenu/dist/wrappers/jquery.mmenu.all.js',
-		'app/libs/fullPage.js-master/jquery.fullPage.min.js'
+		'app/libs/device/device.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())

@@ -15,6 +15,11 @@ body
 	opacity: 1
 html
 	background: #fff
+h1, h2
+    font-size: 3em
+    font-family: Segoeui-ligth
+#my-content
+        background-color: #eaf0f1
 .is-home
 	.site-header
 		min-height: 1300px
@@ -29,9 +34,9 @@ html
 			z-index: 1
 .logo
 	img
-		width: 240px
+		width: 235px
 		height: auto
-		margin-left: 75px
+		margin-left: 90px
 section, header
 	position: relative
 	background-size: cover
@@ -39,9 +44,9 @@ section, header
 .top-composition
 
 .link-menu
-	top: 5px
+	top: 6px
 	position: relative
-	right: 148px
+	right: 155px
 	float: right
 	li
 		a
@@ -149,20 +154,19 @@ section, header
 .hiring-link, .portal-link, .contact-us
 	font-family: Segoeui
 	top: 44px
-	font-size: 18px
+	font-size: 16px
 	white-space: nowrap //!!!!!!!!for small screen
-	margin-right: 5px
 	display: inline-block
-	padding: 10px 24px 7px 24px
+	padding: 10px 20px 7px 20px
 	text-transform: uppercase
 .contact-us
 	border: 2px solid $blue
 	border-radius: 37px
-	height: 43px
-
+	padding: 10px 15px 12px 15px
+    height: 45px
 .hamburger
 	position: absolute
-	right: 0
+	right: 5px
 	top: 28px
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
     height: 4px
@@ -171,7 +175,7 @@ section, header
     bottom: 10px
     border-radius: 1px
     -webkit-border-radius: 1px
-    width: 40px
+    width: 30px
     margin-bottom: 2px
 .in-left
 	-webkit-animation: left-animation 0.5s linear forwards
@@ -215,7 +219,7 @@ section, header
     60% 
     	right: 80px
     70% 
-    	right: 33px
+    	right: 93px
     80% 
     	right: 106px
     80% 
@@ -306,7 +310,7 @@ section, header
     animation: show-menu 0.5s linear forwards
 @-webkit-keyframes show-menu 
     0% 
-    	right:  -200px
+    	right: -200px
     10% 
     	right: -180px
     20% 
@@ -399,20 +403,33 @@ section, header
     	right: -180px
     100% 
     	right: -200px
-.header-flex, .slider-flex
+.header-flex
 	display:flex
 	height: 100%
-	top: 195px
+	top: 178px
 	position: relative
+.header-flex h1
+    color: #f9f9f9
+.header-flex p
+    margin-top: 14px
+    max-width: 470px
+    letter-spacing: 0.5px
+    font-size: 20px
 .flex-cloud
 	display:flex
 	height: 100%
-	top: 320px
+	top: 340px
 	position: relative
+.composition-cloud
+    padding: 0 30px
+    p
+        color: #333
+.flex-cloud h1
+    font-size: 2.8em
 .composition
 	font-family: Display-Light
 	position: relative
-	text-align: right;
+	text-align: left;
 	color: #fff
 	line-height: 1.50
 .composition-cloud
@@ -420,29 +437,33 @@ section, header
 	color: #000
     position: relative
 	line-height: 1.25
-	font-size: 18px
 	h1
 		color: #74819e
+.composition-cloud p
+    font-size: 24px
 .cloud
     min-height: 1250px
-    margin-top: -180px
-    margin-bottom: -215px
+    margin-top: -238px
+    margin-bottom: -242px
     z-index: 2
 .we-specilise
 	color: #000
-	bottom: 400px
-	margin-top: 400px
+	margin-top: 365px
 	text-align: center
 	img
-		width: 140px
+		width: 170px
 .we-specilise, .flex-cloud
     opacity: 0
+.we-specilise p
+    margin-top: 6px
+    font-size: 21px;
+    font-family: Segoeui-ligth 
 .earth
 	position: relative
 	min-height: 700px
 	bottom: 0
 	background-position: 50% !important
-	margin-top: -300px
+	margin-top: -555px
 	z-index: 1
 .aus-flex .composition, .isr-flex .composition, .brz-flex .composition, .usa-flex .composition, .houston-flex .composition
 	width: 8%
@@ -484,7 +505,28 @@ canvas
     position: absolute
     opacity: 0
 .show-composition
-    opacity: 1 !important
+    left: 52%
+    top: 23%
+    -webkit-animation: show-composition 0.5s linear forwards
+    animation: show-composition 0.5s linear forwards
+@keyframes show-composition
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1 
+@webkit-keyframes show-composition
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
 .houston-flex .composition
 	left: 52%
 	top: 23%
@@ -504,8 +546,14 @@ canvas
 	top: 58%
 .houston-flex
 	left: 0
+.flex-slider
+    position: relative
+    top: 248px
+    left: -28px
 .slider
-	min-height: 700px
+	min-height: 605px
+.slider .composition
+    text-align: right
 .how-we-work
 	font-size: 3em
 #my-footer
@@ -513,67 +561,79 @@ canvas
 	background-color: #545555
 .section-footer    
 	margin-left: 75px
-	top: 100px
+	top: 115px
 	position: relative
 	div
-		margin-left: 30px
 		color: #fff
 	.logo-footer-wrapp
 		img
-		max-width: 240px
+		max-width: 260px
 		height: auto
-		margin-right: 8%
+		margin-right: 6.3%
 		margin-bottom: none
+.section-footer .logo-footer-wrapp
+    margin-left: 0
 .footer__pages
-	font-family: Display-Light
 	div
 		margin-left: 0
 		padding: 0
 		li
-			color: $blue
-			font-size: 18px
+			font-family: Display-Light
+            color: $blue
+			font-size: 16px
 			padding: 2px 0
 	.footer__pages-title
 		border-bottom: 2px solid $blue
 		font-family: Display-Light
 		font-size: 21px
-		padding-bottom: 20px
-		margin-top: 0px 
-		margin-bottom: 40px		
+		padding-bottom: 10px
+		margin-top: 2px 
+		margin-bottom: 28px		
+.footer__pages
+    width: 390px
+    margin-left: 40px
+.footer__pages .foo_righ
+    margin-left: -20px
+
 .footer__contact-title, .footer__social-title
 	border-bottom: 2px solid #a9e8f9
-	font-family: Display-Light 
-	font-size: 18px
-	padding-bottom: 20px
-	margin-top: 0px 
 	font-family: Display-Light
+	font-size: 18px
+	padding-bottom: 12px
+	margin-top: 0px 
 	font-size: 21px
-	margin-bottom: 40px
-.footer__contact, 
+	margin-bottom: 28px
+.footer__contact
+    padding-left: 4px
+    width: 190px
+.footer__social
+    padding-left: 4px
+    width: 190px
+.footer__contact
 	div
-		width: 40px
+		margin-left: 35px
+        width: 40px
 		height: 40px
 		text-align: center
 		margin-left: 0
 		margin-right: 10px
 		border-radius: 5px
 		display: inline-block
-		padding: 6px
 		img
-			width: 40px
+			width: 34px
 .footer__social
     div
         border: 1.5px solid #979898
-        width: 40px
-        height: 40px
+        width: 32px
+        height: 32px
         text-align: center
         margin-left: 0
         margin-right: 10px
         border-radius: 5px
         display: inline-block
-        padding: 6px
+        padding: 2px
         img
-            width: 25px
+            width: 17px
 
 .smutch
 	background-image: linear-gradient(to right, #4c4c4c 50%, rgba(255,255,255,0) 0%);
@@ -601,3 +661,248 @@ canvas
         opacity: 0.6
     100%
         opacity: 1
+
+
+#my-footer .section-footer
+    left: 0
+    top: 0
+    margin: 0
+    
+.logo img
+.humburger
+    padding: 76px 75px
+.slider-flex .row
+    margin-left: 0
+    margin-right: 0
+.section-footer .logo-footer-wrapp
+    bottom: 0
+.hidden-media
+    display: none
+.line-aus
+    position: absolute
+    width: 44%
+    height: 45%
+    left: 49%
+    top: 24%
+    opacity: 0
+    background: url(../img/line/aus.svg)
+.path-aus
+    -webkit-animation: path-aus-animation 3s linear forwards
+    animation: path-aus-animation 3s linear forwards
+@-webkit-keyframes path-aus-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@keyframes path-aus-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+.line-usa
+    position: absolute
+    width: 44%
+    height: 50%
+    left: 16%
+    top: 10%
+    opacity: 0
+    background: url(../img/line/usa.svg)
+.path-usa
+    -webkit-animation: path-usa-animation 3s linear forwards
+    animation: path-usa-animation 3s linear forwards
+@-webkit-keyframes path-usa-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@keyframes path-usa-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+.line-bzr
+    position: absolute
+    width: 44%
+    height: 50%
+    left: 22%
+    top: 22%
+    opacity: 0
+    background: url(../img/line/bzr.svg)
+.path-bzr
+    -webkit-animation: path-bzr-animation 3s linear forwards
+    animation: path-bzr-animation 3s linear forwards
+@-webkit-keyframes path-bzr-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@keyframes path-bzr-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+.line-isr
+    position: absolute
+    width: 50%
+    height: 50%
+    left: 34%
+    top: 14%
+    opacity: 0
+    background: url(../img/line/isr.svg)
+.path-isr
+    -webkit-animation: path-isr-animation 3s linear forwards
+    animation: path-isr-animation 3s linear forwards
+@-webkit-keyframes path-isr-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@keyframes path-isr-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+
+.is-about-us .site-header
+    min-height: 597px
+    height: 100vh
+    background-color: #000
+    background-position: center center
+    z-index: 0
+    .top-line
+        position: absolute
+        padding-top: 27px
+        width: 100%
+        z-index: 1
+        .logo
+            img
+                width: 235px
+                height: auto
+                margin-left: 90px
+.become
+    overflow: hidden
+    min-height: 698px
+    height: 100vh
+    text-align: center
+.basic-principles
+    background-color: #f8f8f8
+    min-height: 597px
+    text-align: center
+    border-top: 2px solid
+.header-flex-about
+    display:flex
+    height: 100%
+    top: 178px
+    position: relative
+    .composition
+        left: 3%
+        line-height: 1.45
+.header-flex-about h1
+    color: #f9f9f9
+.header-flex-about p
+    margin-top: 14px
+    max-width: 600px
+    letter-spacing: 0.5px
+    font-size: 20px
+.about-img
+    position: absolute
+    max-height: 27%
+.img-top
+    top: 25%
+    left: 34%
+.img-left
+    top: 36%
+    left: 14%
+.img-bottom
+    top: 57%
+    left: 28%
+.header-flex-become
+    height: 100%
+    top: 88px
+    position: relative
+    h1
+        color: #74819e
+    p
+        color: #333;
+        margin-top: 26px
+        letter-spacing: 0.5px
+        font-size: 20px
+        font-family: Display-Light
+        text-align: left
+        line-height: 1.35
+        padding: 0 7%
+.composition-become
+    max-width: 48%
+    margin: 0 auto
+.basic-principles
+    padding-top: 6%
+.header-flex-principles
+    position: relative
+    top: 3%
+    .composition-principles
+    h1
+        color: #74819e
+.principles-container
+    padding: 19px 0
+    .row
+        margin: 3% 0
+        img
+            width: 55%
+        h2
+            font-size: 2.5em
+            color: #74819e
+            text-align: left
+        p
+            color: #333
+            letter-spacing: 0.5px
+            font-size: 20px
+            font-family: Display-Light
+            text-align: left
+            line-height: 1.35
+            max-width: 870px
+.wrapp-composition-left, .wrapp-composition-right
+    position: relative
+    right: 5%
+.principles-container .composition-right
+    position: relative
+    left: 35%
+canvas
+    top: 0
+    left: 0
+    position: absolute
+    background: #fff
+    width: 100%
+
+        
