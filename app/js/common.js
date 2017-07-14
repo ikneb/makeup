@@ -39,6 +39,15 @@ function cloudFly (){
                 }, 600);
 }
 
+function aboutUsFly (){
+     setTimeout(function () {
+                    $(".header-flex-about").attr('id','about-us-fly-text');
+                    $(".about-img").addClass('about-us-fly-img');
+
+                }, 1000);
+}
+
+
 $(function(){
     function updateAnchors() {
         anchors = [];
@@ -118,6 +127,226 @@ function come(elem) {
   return false;
 }
 
+
+$(function() {
+    var canvas = $('#canvasElement');
+    canvas.attr('width', windWidth).attr('height', windHeigth);
+    var context = canvas.get(0).getContext('2d');
+    var canvasWidth = canvas.width();
+    var canvasHeight = canvas.height();
+    var canvasItem = canvasWidth/10;
+
+
+    var x1 = 0, x2 = canvasItem, x3 = canvasWidth -(canvasWidth - x2) + canvasItem , x4 = canvasWidth -(canvasWidth - x3) + canvasItem, x5 =canvasWidth -(canvasWidth - x4) + canvasItem, x6 = canvasWidth -(canvasWidth - x5) + canvasItem, x7 = canvasWidth -(canvasWidth - x6) + canvasItem, x8 = canvasWidth -(canvasWidth - x7) + canvasItem, x9 = canvasWidth -(canvasWidth - x8) + canvasItem , x10 = canvasWidth -(canvasWidth - x9) + canvasItem;
+    console.log(x3);
+    var y1 = canvasHeight - canvasItem, y2 = canvasHeight - canvasItem, y3 = canvasHeight - canvasItem, y4 = canvasHeight - canvasItem, y5 = canvasHeight - canvasItem, y6 = canvasHeight - canvasItem, y7 = canvasHeight - canvasItem, y8 = canvasHeight - canvasItem, y9 = canvasHeight - canvasItem, y10 = canvasHeight - canvasItem ;
+    var x11 = 0, x12 = canvasItem, x13 = canvasWidth -(canvasWidth - x12) + canvasItem, x14 = canvasWidth -(canvasWidth - x13) + canvasItem, x15 =canvasWidth -(canvasWidth - x14) + canvasItem, x16 = canvasWidth -(canvasWidth - x15) + canvasItem, x17 = canvasWidth -(canvasWidth - x16) + canvasItem, x18 = canvasWidth -(canvasWidth - x17) + canvasItem, x19 = canvasWidth -(canvasWidth - x18) + canvasItem , x20 = canvasWidth -(canvasWidth - x20) + canvasItem;
+    var y11 = 90, y12 = -30, y13 = 90, y14 = 90, y15 = 90, y16 = 90, y17 = 90, y18 = 90, y19 = 90, y20 = 90 ;
+    var color1 = "#09606a";
+    var color2 = "#00c2e9";
+    var color3 = "#b4d8f4";
+    var color4 = "#a9e8f9";
+    var color5 = "#6abfc9";
+    var widthItems = canvasItem;
+    var heightItems = canvasItem;
+
+    function moveBox1() {
+        // clear holst
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x1, y1, widthItems, heightItems);
+        //move 
+        y1++;
+
+        /* var timeout_id = setTimeout( moveBox12, 10);
+        if (y12 == 91) {
+            clearTimeout(timeout_id);
+        }*/
+    }
+
+    function moveBox2() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x2, y2, widthItems, heightItems);
+        //move 
+        y2++;
+    }
+
+    function moveBox3() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x3, y3, widthItems, heightItems);
+        //move 
+        y3++;
+    }
+
+    function moveBox4() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x4, y4, widthItems, heightItems);
+        //move 
+        y4++;
+    }
+
+    function moveBox5() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x5, y5, widthItems, heightItems);
+        //move 
+        y5++;   
+    }
+
+    function moveBox6() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x6, y6, widthItems, heightItems);
+        //move 
+        y6++;
+    }
+
+    function moveBox7() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x7, y7, widthItems, heightItems);
+        //move 
+        y7++;
+    }
+
+    function moveBox8() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x8, y8, widthItems, heightItems);
+        //move 
+        y8++;
+    }
+
+    function moveBox9() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x9, y9, widthItems, heightItems);
+        //move 
+        y9++;
+    }
+
+    function moveBox10() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x10, y10, widthItems, heightItems);
+        //move 
+        y10++;
+    }
+
+    function moveBox11() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x11, y11, widthItems, heightItems);
+        //move 
+        y11++;
+    }
+
+    function moveBox12() {
+        
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x12, y12, widthItems, heightItems);
+        //move 
+        y12++;
+       /* var timeout_id = setTimeout( moveBox12, 10);
+        if (y12 == 91) {
+            clearTimeout(timeout_id);
+        }*/
+    }
+
+    function moveBox13() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x13, y13, widthItems, heightItems);
+        //move 
+        y1++;
+    }
+
+    function moveBox14() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x14, y14, widthItems, heightItems);
+        //move 
+        y14++;
+    }
+
+    function moveBox15() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x15, y15, widthItems, heightItems);
+        //move 
+        y15++;
+    }
+
+    function moveBox16() {
+        // draw 
+        context.fillStyle = color5;
+        context.fillRect(x16, y16, widthItems, heightItems);
+        //move 
+        y16++;
+    }
+
+    function moveBox17() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x17, y17, widthItems, heightItems);
+        //move 
+        y17++;
+    }
+
+    function moveBox18() {
+        // draw 
+        context.fillStyle = color5;
+        context.fillRect(x18, y18, widthItems, heightItems);
+        //move 
+        y18++;
+    }
+
+    function moveBox19() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x19, y19, widthItems, heightItems);
+        //move 
+        y19++;
+    }
+
+    function moveBox20() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x20, y20, widthItems, heightItems);
+        //move 
+        y20++;
+    }
+
+    moveBox1();
+    moveBox2();
+    moveBox3();
+    moveBox4();
+    moveBox5();
+    moveBox6();
+    moveBox7();
+    moveBox8();
+    moveBox9();
+    moveBox10();
+    /*moveBox11();
+  
+    moveBox13();
+    moveBox14();
+    moveBox15();
+    moveBox16();
+    moveBox17();
+    moveBox18();
+    moveBox19();
+    moveBox20();
+      moveBox12();*/
+
+    
+
+});
+
 $(document).ready(function () {
         $('.hamburger').click(function() {
             if(click){
@@ -150,38 +379,18 @@ $(document).ready(function () {
                 composition.style.height = composition.clientWidth + 'px';
             }
         });
-            if ($('body').hasClass('is-home')){
-                if (come('.earth') && !device.ios()) {
-                 fly();
+        if ($('body').hasClass('is-home')){
+            if (come('.earth') && !device.ios()) {
+             fly();
             } 
             if (come('.cloud')) {
                 cloudFly();
             }
         }
+        if ($('body').hasClass('is-about-us')){
+             aboutUsFly();
+        } 
 });
 
 
-$(function() {
-    var canvas = $('#canvasElement');
-    var context = canvas.get(0).getContext('2d');
-    var canvasWidth = canvas.width();
-    var canvasHeight = canvas.height();
-    var canvasItem = canvasWidth/10;
-    var x = 0;
-    var y = 0;
 
-    function moveBox() {
-        // clear holst
-        context.clearRect(0,0, canvasWidth, canvasHeight);
-        // draw 
-        context.fillRect(x, y, 25, 25);
-        //move 
-        y++;
-
-        // В цикле каждые 33 миллисекунды вызываем moveBox()
-
-        setTimeout(moveBox, 33);
-    }
-
-    moveBox();
-});
