@@ -129,6 +129,8 @@ function come(elem) {
 
 
 $(function() {
+    var cells = document.getElementById('is-about-us');
+        if (cells) {
     var canvas = $('#canvasElement');
     canvas.attr('width', windWidth).attr('height', windHeigth);
     var context = canvas.get(0).getContext('2d');
@@ -138,10 +140,23 @@ $(function() {
 
 
     var x1 = 0, x2 = canvasItem, x3 = canvasWidth -(canvasWidth - x2) + canvasItem , x4 = canvasWidth -(canvasWidth - x3) + canvasItem, x5 =canvasWidth -(canvasWidth - x4) + canvasItem, x6 = canvasWidth -(canvasWidth - x5) + canvasItem, x7 = canvasWidth -(canvasWidth - x6) + canvasItem, x8 = canvasWidth -(canvasWidth - x7) + canvasItem, x9 = canvasWidth -(canvasWidth - x8) + canvasItem , x10 = canvasWidth -(canvasWidth - x9) + canvasItem;
-    console.log(x3);
     var y1 = canvasHeight - canvasItem, y2 = canvasHeight - canvasItem, y3 = canvasHeight - canvasItem, y4 = canvasHeight - canvasItem, y5 = canvasHeight - canvasItem, y6 = canvasHeight - canvasItem, y7 = canvasHeight - canvasItem, y8 = canvasHeight - canvasItem, y9 = canvasHeight - canvasItem, y10 = canvasHeight - canvasItem ;
-    var x11 = 0, x12 = canvasItem, x13 = canvasWidth -(canvasWidth - x12) + canvasItem, x14 = canvasWidth -(canvasWidth - x13) + canvasItem, x15 =canvasWidth -(canvasWidth - x14) + canvasItem, x16 = canvasWidth -(canvasWidth - x15) + canvasItem, x17 = canvasWidth -(canvasWidth - x16) + canvasItem, x18 = canvasWidth -(canvasWidth - x17) + canvasItem, x19 = canvasWidth -(canvasWidth - x18) + canvasItem , x20 = canvasWidth -(canvasWidth - x20) + canvasItem;
-    var y11 = 90, y12 = -30, y13 = 90, y14 = 90, y15 = 90, y16 = 90, y17 = 90, y18 = 90, y19 = 90, y20 = 90 ;
+    
+    var x11 = 0, x12 = canvasItem, x13 = canvasWidth -(canvasWidth - x12) + canvasItem, x14 = canvasWidth -(canvasWidth - x13) + canvasItem, x15 =canvasWidth -(canvasWidth - x14) + canvasItem, x16 = canvasWidth -(canvasWidth - x15) + canvasItem, x17 = canvasWidth -(canvasWidth - x16) + canvasItem, x18 = canvasWidth -(canvasWidth - x17) + canvasItem, x19 = canvasWidth -(canvasWidth - x18) + canvasItem , x20 = canvasWidth -(canvasWidth - x19) + canvasItem;
+    var y11 = canvasHeight - canvasItem * 2, y12 = -canvasItem , y13 = -canvasItem, y14 = canvasHeight - canvasItem * 2, y15 = -canvasItem, y16 = -canvasItem, y17 = canvasHeight - canvasItem * 2, y18 = -canvasItem, y19 = canvasHeight - canvasItem * 2, y20 = canvasHeight - canvasItem * 2 ;
+        
+    var x21 = 0, x22 = canvasWidth -(canvasWidth - x8) + canvasItem, x23 = canvasWidth -(canvasWidth - x9) + canvasItem;
+    var y21 = -canvasItem, y22 = -canvasItem, y23 = -canvasItem;
+
+    var y12w = y12 - canvasItem;
+    var y13w = y13 - canvasItem;
+    var y15w = y15 - canvasItem;
+    var y16w = y16 - canvasItem;
+    var y18w = y18 - canvasItem;
+    var y21w = y21 - canvasItem;
+    var y22w = y22 - canvasItem;
+    var y23w = y23 - canvasItem;
+
     var color1 = "#09606a";
     var color2 = "#00c2e9";
     var color3 = "#b4d8f4";
@@ -157,11 +172,6 @@ $(function() {
         context.fillRect(x1, y1, widthItems, heightItems);
         //move 
         y1++;
-
-        /* var timeout_id = setTimeout( moveBox12, 10);
-        if (y12 == 91) {
-            clearTimeout(timeout_id);
-        }*/
     }
 
     function moveBox2() {
@@ -245,24 +255,42 @@ $(function() {
     }
 
     function moveBox12() {
-        
         // draw 
         context.fillStyle = color1;
         context.fillRect(x12, y12, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x12, y12w, widthItems, heightItems);
+
         //move 
-        y12++;
-       /* var timeout_id = setTimeout( moveBox12, 10);
-        if (y12 == 91) {
-            clearTimeout(timeout_id);
-        }*/
+        y12 = y12 + 5; y12++;
+        y12w = y12w + 5; y12w++;
+        var timerId = setTimeout( moveBox12, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y12 == stop) {
+            clearTimeout(timerId);
+        }
     }
 
     function moveBox13() {
         // draw 
         context.fillStyle = color4;
         context.fillRect(x13, y13, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x13, y13w, widthItems, heightItems);
         //move 
-        y1++;
+        y13 = y13 + 5; y13++;
+        y13w = y13w + 5; y13w++;
+        var timerId = setTimeout( moveBox13, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y13 == stop) {
+            clearTimeout(timerId);
+        }
     }
 
     function moveBox14() {
@@ -277,16 +305,38 @@ $(function() {
         // draw 
         context.fillStyle = color3;
         context.fillRect(x15, y15, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x15, y15w, widthItems, heightItems);
         //move 
-        y15++;
+        y15 = y15 + 5; y15++;
+        y15w = y15w + 5; y15w++;
+        var timerId = setTimeout( moveBox15, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y15 == stop) {
+            clearTimeout(timerId);
+        }
     }
 
     function moveBox16() {
         // draw 
         context.fillStyle = color5;
         context.fillRect(x16, y16, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x16, y16w, widthItems, heightItems);
         //move 
-        y16++;
+        y16 = y16 + 5; y16++;
+        y16w = y16w + 5; y16w++;
+        var timerId = setTimeout( moveBox16, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y16 == stop) {
+            clearTimeout(timerId);
+        }
     }
 
     function moveBox17() {
@@ -301,8 +351,19 @@ $(function() {
         // draw 
         context.fillStyle = color5;
         context.fillRect(x18, y18, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x18, y18w, widthItems, heightItems);
         //move 
-        y18++;
+        y18 = y18 + 5; y18++;
+        y18w = y18w + 5; y18w++;
+        var timerId = setTimeout( moveBox18, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y18 == stop) {
+            clearTimeout(timerId);
+        }
     }
 
     function moveBox19() {
@@ -321,6 +382,39 @@ $(function() {
         y20++;
     }
 
+    function moveBox21() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x21, y21, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x21, y21w, widthItems, heightItems);
+        //move 
+        
+    }
+
+    function moveBox22() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x22, y22, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x22, y22w, widthItems, heightItems);
+        //move 
+        
+    }
+
+    function moveBox23() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x23, y23, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x23, y23w, widthItems, heightItems);
+        //move 
+    
+    }
+
     moveBox1();
     moveBox2();
     moveBox3();
@@ -331,19 +425,36 @@ $(function() {
     moveBox8();
     moveBox9();
     moveBox10();
-    /*moveBox11();
-  
-    moveBox13();
+    moveBox11();
+    setTimeout(function () {
+        moveBox12();
+    }, 1600);
+    setTimeout(function () {
+        moveBox13();
+    }, 400);
     moveBox14();
-    moveBox15();
-    moveBox16();
+    setTimeout(function () {
+        moveBox15();
+    }, 1500);
+    setTimeout(function () {
+        moveBox16();
+    }, 400);
     moveBox17();
     moveBox18();
     moveBox19();
     moveBox20();
-      moveBox12();*/
+    setTimeout(function () {
+        moveBox21();
+    }, 400);
+    setTimeout(function () {
+        moveBox22();
+    }, 400);
+        setTimeout(function () {
+    moveBox23();
+    }, 400);
 
-    
+      
+    }
 
 });
 
