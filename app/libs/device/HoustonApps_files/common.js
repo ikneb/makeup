@@ -656,8 +656,6 @@ $(function() {
                        firstMousWell = false;
                         currentAnchor++;
                 } else {
-                    console.log(anchors);
-                    console.log(anchors[currentAnchor]);
                    $('html, body').animate({
                         scrollTop: parseInt( anchors[currentAnchor] )
                     }, 1100, 'swing', function(){
@@ -665,6 +663,7 @@ $(function() {
                     });
                 }
             });
+      
     }
 
 
@@ -693,7 +692,7 @@ $(function() {
             moveBox23();
             }, 600);
             isAnim = false;
-            // $('body').unbind();
+            $('body').unbind();
     }
 });
 
