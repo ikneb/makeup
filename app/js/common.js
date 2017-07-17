@@ -7,6 +7,7 @@ var firstMousWell = true;
 var windWidth = document.documentElement.clientWidth; 
 var windHeigth = document.documentElement.clientHeight;
 var stop = false;
+var isAnim = true;
 
 
 function fly() {
@@ -49,12 +50,12 @@ function aboutUsFly (){
 
 
 $(function(){
-    function updateAnchors() {
-        anchors = [];
-        $('.anchor').each(function(i, element){
-            anchors.push( $(element).offset().top );
-        });
-    }
+        function updateAnchors() {
+            anchors = [];
+            $('.anchor').each(function(i, element){
+                anchors.push( $(element).offset().top );
+            });
+        }
         var cells = document.getElementById('is-home');
         if (cells) {
         $('body').on('mousewheel', function(e){
@@ -166,92 +167,68 @@ $(function() {
     var heightItems = canvasItem;
 
     function moveBox1() {
-        // clear holst
-        // draw 
         context.fillStyle = color1;
         context.fillRect(x1, y1, widthItems, heightItems);
-        //move 
-        y1++;
     }
 
     function moveBox2() {
         // draw 
         context.fillStyle = color2;
         context.fillRect(x2, y2, widthItems, heightItems);
-        //move 
-        y2++;
     }
 
     function moveBox3() {
         // draw 
         context.fillStyle = color3;
         context.fillRect(x3, y3, widthItems, heightItems);
-        //move 
-        y3++;
     }
 
     function moveBox4() {
         // draw 
         context.fillStyle = color2;
         context.fillRect(x4, y4, widthItems, heightItems);
-        //move 
-        y4++;
     }
 
     function moveBox5() {
         // draw 
         context.fillStyle = color1;
         context.fillRect(x5, y5, widthItems, heightItems);
-        //move 
-        y5++;   
     }
 
     function moveBox6() {
         // draw 
         context.fillStyle = color3;
         context.fillRect(x6, y6, widthItems, heightItems);
-        //move 
-        y6++;
     }
 
     function moveBox7() {
         // draw 
         context.fillStyle = color1;
         context.fillRect(x7, y7, widthItems, heightItems);
-        //move 
-        y7++;
     }
 
     function moveBox8() {
         // draw 
         context.fillStyle = color4;
         context.fillRect(x8, y8, widthItems, heightItems);
-        //move 
-        y8++;
     }
 
     function moveBox9() {
         // draw 
         context.fillStyle = color3;
         context.fillRect(x9, y9, widthItems, heightItems);
-        //move 
-        y9++;
     }
 
     function moveBox10() {
         // draw 
         context.fillStyle = color4;
         context.fillRect(x10, y10, widthItems, heightItems);
-        //move 
-        y10++;
     }
 
     function moveBox11() {
         // draw 
         context.fillStyle = color4;
         context.fillRect(x11, y11, widthItems, heightItems);
-        //move 
-        y11++;
     }
 
     function moveBox12() {
@@ -263,13 +240,35 @@ $(function() {
         context.fillRect(x12, y12w, widthItems, heightItems);
 
         //move 
-        y12 = y12 + 5; y12++;
-        y12w = y12w + 5; y12w++;
+        y12 = y12 + 5;
+        y12w = y12w + 5;
         var timerId = setTimeout( moveBox12, 1);
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (y12 == stop) {
+        if (
+            parseInt(y12) == parseInt(stop) - 1 
+            || parseInt(y12) == parseInt(stop) - 2 
+            || parseInt(y12) == parseInt(stop) - 3 
+            || parseInt(y12) == parseInt(stop) - 4 
+            || parseInt(y12) == parseInt(stop) - 4
+            || parseInt(y12) == parseInt(stop) - 5
+            || parseInt(y12) == parseInt(stop) - 4
+            || parseInt(y12) == parseInt(stop) + 5
+            || parseInt(y12) == parseInt(stop) + 4
+            || parseInt(y12) == parseInt(stop) + 3
+            || parseInt(y12) == parseInt(stop) + 2
+            || parseInt(y12) == parseInt(stop) + 1
+            || parseInt(y12) == parseInt(stop)) {
+             
+            var back = parseInt(stop) - parseInt(y12);
+                
+            context.fillStyle = color1;
+            context.fillRect(x12, y12 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x12, y12w + back, widthItems, heightItems);
+
             clearTimeout(timerId);
         }
     }
@@ -282,20 +281,43 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x13, y13w, widthItems, heightItems);
         //move 
-        y13 = y13 + 5; y13++;
-        y13w = y13w + 5; y13w++;
+        y13 = y13 + 5;
+        y13w = y13w + 5;
         var timerId = setTimeout( moveBox13, 1);
 
-        var stop = canvasHeight - canvasItem * 2;
+        var stop = canvasHeight - canvasItem * 2 + 1 ;
         
-        if (y13 == stop) {
+        if (
+            parseInt(y13) == parseInt(stop) - 1 
+            || parseInt(y13) == parseInt(stop) - 2 
+            || parseInt(y13) == parseInt(stop) - 3 
+            || parseInt(y13) == parseInt(stop) - 4 
+            || parseInt(y13) == parseInt(stop) - 4
+            || parseInt(y13) == parseInt(stop) - 5
+            || parseInt(y13) == parseInt(stop) - 4
+            || parseInt(y13) == parseInt(stop) + 5
+            || parseInt(y13) == parseInt(stop) + 4
+            || parseInt(y13) == parseInt(stop) + 3
+            || parseInt(y13) == parseInt(stop) + 2
+            || parseInt(y13) == parseInt(stop) + 1
+            || parseInt(y13) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y13);
+                
+
+            context.fillStyle = color4;
+            context.fillRect(x13, y13 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x13, y13w + back, widthItems, heightItems);
+
             clearTimeout(timerId);
         }
     }
 
     function moveBox14() {
         // draw 
-        context.fillStyle = color3;
+        context.fillStyle = color5;
         context.fillRect(x14, y14, widthItems, heightItems);
         //move 
         y14++;
@@ -309,13 +331,34 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x15, y15w, widthItems, heightItems);
         //move 
-        y15 = y15 + 5; y15++;
-        y15w = y15w + 5; y15w++;
+        y15 = y15 + 5;
+        y15w = y15w + 5;
         var timerId = setTimeout( moveBox15, 1);
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (y15 == stop) {
+        if (
+            parseInt(y15) == parseInt(stop) - 1 
+            || parseInt(y15) == parseInt(stop) - 2 
+            || parseInt(y15) == parseInt(stop) - 3 
+            || parseInt(y15) == parseInt(stop) - 4 
+            || parseInt(y15) == parseInt(stop) - 4
+            || parseInt(y15) == parseInt(stop) - 5
+            || parseInt(y15) == parseInt(stop) - 4
+            || parseInt(y15) == parseInt(stop) + 5
+            || parseInt(y15) == parseInt(stop) + 4
+            || parseInt(y15) == parseInt(stop) + 3
+            || parseInt(y15) == parseInt(stop) + 2
+            || parseInt(y15) == parseInt(stop) + 1
+            || parseInt(y15) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y15);
+            context.fillStyle = color3;
+            context.fillRect(x15, y15 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x15, y15w + back, widthItems, heightItems);
+
             clearTimeout(timerId);
         }
     }
@@ -328,13 +371,37 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x16, y16w, widthItems, heightItems);
         //move 
-        y16 = y16 + 5; y16++;
-        y16w = y16w + 5; y16w++;
+        y16 = y16 + 5;
+        y16w = y16w + 5;
         var timerId = setTimeout( moveBox16, 1);
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (y16 == stop) {
+        if (
+            parseInt(y16) == parseInt(stop) - 1 
+            || parseInt(y16) == parseInt(stop) - 2 
+            || parseInt(y16) == parseInt(stop) - 3 
+            || parseInt(y16) == parseInt(stop) - 4 
+            || parseInt(y16) == parseInt(stop) - 4
+            || parseInt(y16) == parseInt(stop) - 5
+            || parseInt(y16) == parseInt(stop) - 4
+            || parseInt(y16) == parseInt(stop) + 5
+            || parseInt(y16) == parseInt(stop) + 4
+            || parseInt(y16) == parseInt(stop) + 3
+            || parseInt(y16) == parseInt(stop) + 2
+            || parseInt(y16) == parseInt(stop) + 1
+            || parseInt(y16) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y16);
+            console.log(back);
+                
+
+            context.fillStyle = color5;
+            context.fillRect(x16, y16 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x16, y16w + back, widthItems, heightItems);
+
             clearTimeout(timerId);
         }
     }
@@ -355,13 +422,35 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x18, y18w, widthItems, heightItems);
         //move 
-        y18 = y18 + 5; y18++;
-        y18w = y18w + 5; y18w++;
+        y18 = y18 + 5;
+        y18w = y18w + 5;
         var timerId = setTimeout( moveBox18, 1);
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (y18 == stop) {
+        if (
+            parseInt(y18) == parseInt(stop) - 1 
+            || parseInt(y18) == parseInt(stop) - 2 
+            || parseInt(y18) == parseInt(stop) - 3 
+            || parseInt(y18) == parseInt(stop) - 4 
+            || parseInt(y18) == parseInt(stop) - 4
+            || parseInt(y18) == parseInt(stop) - 5
+            || parseInt(y18) == parseInt(stop) - 4
+            || parseInt(y18) == parseInt(stop) + 5
+            || parseInt(y18) == parseInt(stop) + 4
+            || parseInt(y18) == parseInt(stop) + 3
+            || parseInt(y18) == parseInt(stop) + 2
+            || parseInt(y18) == parseInt(stop) + 1
+            || parseInt(y18) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y18);
+
+            context.fillStyle = color5;
+            context.fillRect(x18, y18 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x18, y18w + back, widthItems, heightItems);
+
             clearTimeout(timerId);
         }
     }
@@ -384,76 +473,230 @@ $(function() {
 
     function moveBox21() {
         // draw 
-        context.fillStyle = color1;
+        context.fillStyle = color5;
         context.fillRect(x21, y21, widthItems, heightItems);
 
         context.fillStyle = '#fff';
         context.fillRect(x21, y21w, widthItems, heightItems);
         //move 
+
+        y21 = y21 + 5;
+        y21w = y21w + 5;
+        var timerId = setTimeout( moveBox21, 1);
+
+        var stop = canvasHeight - canvasItem * 2 - canvasItem;
+        
+        if (
+            parseInt(y21) == parseInt(stop) - 1 
+            || parseInt(y21) == parseInt(stop) - 2 
+            || parseInt(y21) == parseInt(stop) - 3 
+            || parseInt(y21) == parseInt(stop) - 4 
+            || parseInt(y21) == parseInt(stop) - 4
+            || parseInt(y21) == parseInt(stop) - 5
+            || parseInt(y21) == parseInt(stop) - 4
+            || parseInt(y21) == parseInt(stop) + 5
+            || parseInt(y21) == parseInt(stop) + 4
+            || parseInt(y21) == parseInt(stop) + 3
+            || parseInt(y21) == parseInt(stop) + 2
+            || parseInt(y21) == parseInt(stop) + 1
+            || parseInt(y21) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y21);
+
+            context.fillStyle = color5;
+            context.fillRect(x21, y21 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x21, y21w + back, widthItems, heightItems);
+
+            clearTimeout(timerId);
+        }
         
     }
 
     function moveBox22() {
         // draw 
-        context.fillStyle = color1;
+        context.fillStyle = color4;
         context.fillRect(x22, y22, widthItems, heightItems);
 
         context.fillStyle = '#fff';
         context.fillRect(x22, y22w, widthItems, heightItems);
         //move 
+
+        y22 = y22 + 5;
+        y22w = y22w + 5;
+        var timerId = setTimeout( moveBox22, 1);
+
+        var stop = canvasHeight - canvasItem * 2 - canvasItem;
+        
+        if (
+            parseInt(y22) == parseInt(stop) - 1 
+            || parseInt(y22) == parseInt(stop) - 2 
+            || parseInt(y22) == parseInt(stop) - 3 
+            || parseInt(y22) == parseInt(stop) - 4 
+            || parseInt(y22) == parseInt(stop) - 4
+            || parseInt(y22) == parseInt(stop) - 5
+            || parseInt(y22) == parseInt(stop) - 4
+            || parseInt(y22) == parseInt(stop) + 5
+            || parseInt(y22) == parseInt(stop) + 4
+            || parseInt(y22) == parseInt(stop) + 3
+            || parseInt(y22) == parseInt(stop) + 2
+            || parseInt(y22) == parseInt(stop) + 1
+            || parseInt(y22) == parseInt(stop)) {
+             
+             var back = parseInt(stop) - parseInt(y22);
+
+            context.fillStyle = color4;
+            context.fillRect(x22, y22 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x22, y22w + back, widthItems, heightItems);
+
+            clearTimeout(timerId);
+        }
         
     }
 
     function moveBox23() {
         // draw 
-        context.fillStyle = color1;
+        context.fillStyle = color5;
         context.fillRect(x23, y23, widthItems, heightItems);
 
         context.fillStyle = '#fff';
         context.fillRect(x23, y23w, widthItems, heightItems);
         //move 
-    
+
+        y23 = y23 + 5; 
+
+        y23w = y23w + 5;
+
+        var timerId = setTimeout( moveBox23, 1);
+
+        var stop = canvasHeight - canvasItem * 2 - canvasItem;
+        
+        if (
+            parseInt(y23) == parseInt(stop) - 1 
+            || parseInt(y23) == parseInt(stop) - 2 
+            || parseInt(y23) == parseInt(stop) - 3 
+            || parseInt(y23) == parseInt(stop) - 4 
+            || parseInt(y23) == parseInt(stop) - 4
+            || parseInt(y23) == parseInt(stop) - 5
+            || parseInt(y23) == parseInt(stop) - 4
+            || parseInt(y23) == parseInt(stop) + 5
+            || parseInt(y23) == parseInt(stop) + 4
+            || parseInt(y23) == parseInt(stop) + 3
+            || parseInt(y23) == parseInt(stop) + 2
+            || parseInt(y23) == parseInt(stop) + 1
+            || parseInt(y23) == parseInt(stop)) {
+             console.log(parseInt(stop));
+             console.log(parseInt(y23));
+             var back = parseInt(stop) - parseInt(y23);
+
+            context.fillStyle = color5;
+            context.fillRect(x23, y23 + back, widthItems, heightItems);
+
+            context.fillStyle = '#fff';
+            context.fillRect(x23, y23w + back, widthItems, heightItems);
+
+            clearTimeout(timerId);
+        }
     }
 
-    moveBox1();
-    moveBox2();
-    moveBox3();
-    moveBox4();
-    moveBox5();
-    moveBox6();
-    moveBox7();
-    moveBox8();
-    moveBox9();
-    moveBox10();
-    moveBox11();
-    setTimeout(function () {
-        moveBox12();
-    }, 1600);
-    setTimeout(function () {
-        moveBox13();
-    }, 400);
-    moveBox14();
-    setTimeout(function () {
-        moveBox15();
-    }, 1500);
-    setTimeout(function () {
-        moveBox16();
-    }, 400);
-    moveBox17();
-    moveBox18();
-    moveBox19();
-    moveBox20();
-    setTimeout(function () {
-        moveBox21();
-    }, 400);
-    setTimeout(function () {
-        moveBox22();
-    }, 400);
-        setTimeout(function () {
-    moveBox23();
-    }, 400);
+    function animationStop(y, stop, timerId, context ) {
+        
+    }
 
+            moveBox1();
+            moveBox2();
+            moveBox3();
+            moveBox4();
+            moveBox5();
+            moveBox6();
+            moveBox7();
+            moveBox8();
+            moveBox9();
+            moveBox10();
+            moveBox11();
+            
+            moveBox17();
+            moveBox18();
+            moveBox19();
+            moveBox20();
+            
+
+            $('body').on('mousewheel', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            if( isAnimating) {
+                return false;
+            }
+            isAnimating  = true;
+            
+            // Increase or reset current anchor
+            if( e.originalEvent.wheelDelta >= 0 ) {
+                currentAnchor--;
+            }else{
+                currentAnchor++;
+            }
+            if( currentAnchor > (anchors.length - 1) 
+               || currentAnchor < 0 ) {
+                currentAnchor = 0;
+            }
+            isAnimating  = true;
+            if( anchors[currentAnchor] > 600 && isAnim == true) {
+                  flyBecome();
+            }
+             if (parseInt(anchors[currentAnchor]) > 1200) {
+                   
+            }
+                render = true;
+            if (firstMousWell) {
+                   $('html, body').animate({
+                    scrollTop: parseInt(900)
+                }, 1100, 'swing', function(){
+                    isAnimating  = false;
+                });
+                   firstMousWell = false;
+                   fly();
+                    currentAnchor++;
+            } else {
+                $('html, body').animate({
+                    scrollTop: parseInt( anchors[currentAnchor] )
+                }, 1100, 'swing', function(){
+                    isAnimating  = false;
+                });
+            }
+        });
       
+    }
+
+
+    function flyBecome() {
+          setTimeout(function () {
+                    moveBox12();
+                }, 1600);
+                setTimeout(function () {
+                    moveBox13();
+                }, 400);
+                moveBox14();
+                setTimeout(function () {
+                    moveBox15();
+                }, 1500);
+                setTimeout(function () {
+                    moveBox16();
+                }, 400);
+                setTimeout(function () {
+                moveBox21();
+                }, 500);
+                setTimeout(function () {
+                    moveBox22();
+                }, 1100);
+                    setTimeout(function () {
+                moveBox23();
+                }, 600);
+                    isAnim = false;
+                   $('body').unbind();
     }
 
 });
